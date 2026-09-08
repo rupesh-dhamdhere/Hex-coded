@@ -125,24 +125,3 @@ Contributions are welcome. Please open an issue to discuss major changes before 
 4. Push to your branch and open a Pull Request
 
 Please follow the repository's code style and include tests for new behavior.
-
----
-
-## License
-
-This project currently has no license file. If you want, I can add an MIT (or other) license—tell me which license you prefer and I will add a LICENSE file and update this section.
-
----
-
-## Contact
-
-Maintainer: rupesh-dhamdhere
-
----
-
-If you'd like, I can:
-- Finish authoring example Chatbase / Cal.com integration snippets (React component examples),
-- Add a LICENSE file (MIT, Apache-2.0, etc.),
-- Add GitHub Actions for CI and a Vercel deployment guide with required env vars.
-
-Tell me which you'd like next and I'll update the repository.

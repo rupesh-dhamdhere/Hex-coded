@@ -1,110 +1,148 @@
-# Hex-coded
+# HexCoded — AI Show Studio Landing Page & Sales Agent
 
-A starter README for the Hex-coded project.
+[![Framework](https://img.shields.io/badge/Framework-Next.js%2014-black?style=flat-square&logo=next.js)](https://nextjs.org/)
+[![Styling](https://img.shields.io/badge/Styling-Tailwind%20CSS-06B6D4?style=flat-square&logo=tailwindcss)](https://tailwindcss.com/)
+[![Scheduling](https://img.shields.io/badge/Scheduling-Cal.com-292929?style=flat-square&logo=cal.com)](https://cal.com/)
+[![Deployment](https://img.shields.io/badge/Deployment-Vercel-000000?style=flat-square&logo=vercel)](https://vercel.com/)
 
-> NOTE: This README is a template. Please replace the sections below with project-specific details (purpose, usage examples, screenshots, links).
+A production-ready, high-converting landing page built for **HexCoded** — an AI studio that produces full vertical series, short dramas, and short films for commissioned apps (Kuku TV, STAGE, ReelShort) and content teams.
 
-## Table of Contents
+This platform features a dark-themed UI, an embedded AI sales assistant with strict knowledge guardrails, and an automated Cal.com booking modal to schedule client demos.
 
-- [About](#about)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Development](#development)
-- [Testing](#testing)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+---
 
-## About
+## 🌟 Key Features
 
-Hex-coded is a project named "Hex-coded". Add a short description of what this project does, the problem it solves, and the intended audience.
+- **High-Converting Hero & UI:** Dark-mode design built with Next.js & Tailwind CSS highlighting HexCoded's core value proposition (*"Models make shots, HexCoded makes shows"*).
+- **Strictly Grounded AI Sales Agent:** Integrated Chatbase chatbot trained exclusively on HexCoded context.
+  - **No Pricing Quotes:** Redirects pricing queries to a live demo call.
+  - **Competitor Differentiation:** Positions HexCoded against tools like Magnific, OpenArt, ImagineArt, and LTX Studio by emphasizing 40+ episode character consistency.
+- **Automated Cal.com Booking:** Native `@calcom/embed-react` modal integration for instant demo calendar invites and automated confirmation emails.
+- **Fully Responsive:** Optimized for desktop, mobile, and webview apps.
 
-## Features
+---
 
-- Feature 1 — describe what it does
-- Feature 2 — describe what it does
-- Feature 3 — describe what it does
+## 🛠️ Tech Stack
 
-## Getting Started
+- **Frontend:** [Next.js 14](https://nextjs.org/) (App Router), React, TypeScript
+- **Styling:** [Tailwind CSS](https://tailwindcss.com/)
+- **AI Agent Integration:** [Chatbase](https://www.chatbase.co/)
+- **Scheduling Infrastructure:** [Cal.com](https://cal.com/) (`@calcom/embed-react`)
+- **Hosting:** [Vercel](https://vercel.com/)
 
-These instructions will get a copy of the project up and running on your local machine for development and testing purposes.
+---
+
+## 🚀 Quick Start
 
 ### Prerequisites
 
-List what is needed to install the software and how to install them.
+Ensure you have the following installed:
+- [Node.js](https://nodejs.org/) (v18.0.0 or higher)
+- `npm`, `pnpm`, or `yarn`
 
-- Example: Node.js >= 14, Python >= 3.8, Docker, etc.
+### Installation & Setup
 
-### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/rupesh-dhamdhere/Hex-coded.git
+   cd Hex-coded
+   ```
 
-1. Clone the repository:
+2. **Install dependencies:**
+   ```bash
+   # npm
+   npm install
 
-```bash
-git clone https://github.com/rupesh-dhamdhere/Hex-coded.git
-cd Hex-coded
-```
+   # or pnpm
+   # pnpm install
 
-2. Install dependencies (example):
+   # or yarn
+   # yarn
+   ```
 
-```bash
-# Node
-npm install
+3. **Environment variables** (example):
+   - Create a `.env.local` at the project root and add the keys your app expects. Example variables:
+     ```env
+     NEXT_PUBLIC_CHATBASE_API_KEY=your_chatbase_api_key
+     NEXT_PUBLIC_CALCOM_URL=your_calcom_public_embed_url
+     # Any other API keys or feature flags
+     ```
+   - Never commit secrets to the repository.
 
-# Python (if applicable)
-# pip install -r requirements.txt
-```
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   # or
+   pnpm dev
+   # or
+   yarn dev
+   ```
 
-## Usage
+5. **Build for production:**
+   ```bash
+   npm run build
+   npm run start
+   ```
 
-Explain how to run the project and include example commands and expected output.
+---
 
-```bash
-# Example
-npm start
-# or
-python main.py
-```
+## Usage & Integration Notes
 
-Include screenshots or examples if helpful.
+- Chatbase: The AI sales agent is intentionally grounded only on HexCoded content. Configure your Chatbase bot (or equivalent) so it refuses pricing and competitor pricing queries and instead directs users to schedule a demo via the Cal.com modal.
+- Cal.com: Use `@calcom/embed-react` to show an in-page booking modal. Keep the booking flow simple (15/30/45 minute demo options) and ensure confirmation emails include links to a prepared demo deck.
+- Accessibility: Follow semantic HTML, provide ARIA labels for interactive widgets (chat, booking), and test the dark theme for sufficient contrast.
 
-## Development
+---
 
-Describe how to set up a development environment, coding conventions, and how to run linters.
+## Deployment
 
-- Branching model: e.g., feature branches, pull requests
-- Code style: e.g., Prettier, ESLint, Black
+- Recommended: Deploy to [Vercel](https://vercel.com/) for seamless Next.js support and edge network performance.
+- Configure environment variables in your Vercel project dashboard (do not expose secret keys in client-side variables unless required and safe).
+
+---
 
 ## Testing
 
-Explain how to run the test suite.
+- Unit & integration tests: Add your preferred test runner (Jest, Vitest, React Testing Library).
+- E2E: Consider Playwright or Cypress for full flow tests (chat + booking modal).
 
 ```bash
+# Example test commands
 npm test
 # or
-pytest
+npm run test:e2e
 ```
+
+---
 
 ## Contributing
 
-Contributions are welcome! Please open an issue to discuss your changes before submitting a pull request.
+Contributions are welcome. Please open an issue to discuss major changes before submitting a pull request.
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/YourFeature`)
-3. Commit your changes (`git commit -m 'Add some feature'`)
-4. Push to the branch (`git push origin feature/YourFeature`)
-5. Open a Pull Request
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m "Add feature"`)
+4. Push to your branch and open a Pull Request
+
+Please follow the repository's code style and include tests for new behavior.
+
+---
 
 ## License
 
-Add a license that applies to this project (for example, MIT). If you're not sure, add a LICENSE file with the chosen license and mention it here.
+This project currently has no license file. If you want, I can add an MIT (or other) license—tell me which license you prefer and I will add a LICENSE file and update this section.
+
+---
 
 ## Contact
 
-Project maintainer: rupesh-dhamdhere
+Maintainer: rupesh-dhamdhere
 
---
+---
 
 If you'd like, I can:
-- Customize this README with a project description and usage examples if you tell me what Hex-coded does,
-- Add a LICENSE file, CI badges, or a CONTRIBUTING.md file.
+- Finish authoring example Chatbase / Cal.com integration snippets (React component examples),
+- Add a LICENSE file (MIT, Apache-2.0, etc.),
+- Add GitHub Actions for CI and a Vercel deployment guide with required env vars.
+
+Tell me which you'd like next and I'll update the repository.
